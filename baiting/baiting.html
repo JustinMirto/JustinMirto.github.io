@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baiting</title>
+    <link rel="stylesheet" href="baiting.css">
+
+</head>
+<body>
+    <header>
+        <h1> <a class="main-link" href="/index.html">Cybersecurity Training</a></h1>
+        <a href="/phishing/phishing.html">Phishing</a>
+        <a href="/smishing/smishing.html">Smishing</a>
+        <a href="/quiz/quiz.html">Quiz</a>
+    </header>
+
+    <div class="main-text">
+        <h1>Baiting Simulation</h1>
+        <h2>Is the offer <span class="main-text-green">legitimate</span> or a <span class="main-text-red">baiting</span> attempt?</h2>
+        
+        <div>
+            <button onclick="legit()" class="button-green">Legitimate</button>
+            <button onclick="phish()" class="button-red">Baiting</button>
+        </div>
+    </div>
+
+    <div class="gallery">
+    <div class="container">
+            <div class="gallery-items">
+                <div class="item">
+                    <img src="images/baiting1.webp" alt="bait 1" />
+                </div>
+                <div class="item">
+                    <img src="images/baiting2.png" alt="bait 2" />
+                </div>
+                <div class="item">
+                    <img src="images/baiting3.webp" alt="bait 3" />
+                </div>
+                <div class="item">
+                    <img src="images/baiting4.png" alt="bait 4" />
+                </div>
+                <div class="item">
+                    <img src="images/baiting5.webp" alt="bait 5" />
+                </div>
+            </div>
+    </div>
+        
+
+    <div class="pagination">
+        <ul>
+			<div class="prev">&#8592</div>
+			<div class="page"><span class="page-num"></span></div>
+			<div class="next">&#8594</div>
+        </ul>
+    </div>
+
+    <!-- main modal - it has the phishing info -->
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">How to Spot Baiting</div>
+        <button data-close-button class="understood-button">Understood!</button>
+      </div>
+  
+      <div class="modal-body">
+          <u>Tempting Offers</u>
+              <br>
+          Cybercriminals know that people are attracted to free prizes or discounts, and will try to use that to their advantage. These offers can include
+          discounts on subscription services, free phones or other devices, and many more. If an offer seems too good to be true (such as a free iPhone simply by clicking a link), 
+          there is a chance that the offer is not legitimate.
+      </div>
+  
+      <div class="modal-body">
+          <u>Competitions and Prizes</u>
+              <br>
+            If an email or a popup is claiming you have won a competition that you have not entered, or claim that you have completed a milestone for the company and is offering you a prize
+            for this, it is best to assume that it is a baiting attempt and not a legitimate claim.
+      </div>
+  
+      <div class="modal-body">
+          <u>Suspicious Sender</u>
+              <br>
+            If you receive any form of an offer or a prize from a sender that you do not recognise, it is better to be careful and assume that
+            the offer itself is not real and instead is a baiting attempt.
+      </div>
+
+    <div class="modal-body">
+        <u>Urgency</u>
+            <br>
+            A common trick used is creating a false sense of urgency or danger. They will claim that you have to perform an action immediately, or you will face some form
+            of legal or financial problem. They do this so you panic, stop thinking clearly (or stop thinking at all), and do what they want under pressure.
+        </div>
+    </div>
+
+    <!-- when the user selects correctly -->
+    <div class="modal" id="correct-modal">
+            <div class="correct-modal-header">
+                Well Done!
+            </div>
+        
+            <div class="modal-body">  
+                <div class="result-message">Would you still like how to view how to spot a baiting attempt?</div>  
+                
+                <div class="modal-buttons">
+                    <button data-modal-target="#modal" class="open-button" onclick="closeModal(document.getElementById('correct-modal')); 
+                    openModal(document.getElementById('modal'));">&#10004;
+                    </button>
+                    <button data-close-button class="close-button">&#10006;</button>
+                </div>
+            </div>
+        
+    </div>
+
+    <!-- when the user selects incorrectly -->
+    <div class="wrong-modal" id="wrong-modal">
+            <div class="modal-header">
+            Not Quite Right.
+            </div>
+        
+            <div class="modal-body">  
+                <div class="result-message">Press the button below to view how to spot a baiting attempt.</div>  
+                
+                <div class="modal-buttons">
+                    <button class="wrong-open-button" onclick="closeModal(document.getElementById('wrong-modal')); openModal(document.getElementById('modal'));">OK</button>
+                </div>
+            </div>
+        
+    </div>
+
+    <div id="overlay"></div>
+  
+    <script src="baiting.js"></script>
+</body>
+</html>

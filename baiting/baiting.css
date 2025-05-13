@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Chewy", system-ui;
+}
+
+header{
+    background-color: #011936;
+    color: white;
+    width: 100%;
+    height: 8.5rem;
+    font-size: 1.25rem;
+    text-align: center;
+    justify-content: center;
+}
+
+body{
+    background-color: #fffce4;
+}
+
+.main-link{
+    color: white;
+    font-size: 2.5rem;
+    text-decoration: none;
+}
+
+.main-link:hover{
+    text-decoration: underline;
+}
+
+a{
+    color: #FFB30F;
+    font-size: 2rem;
+    transition-duration: 0.4s;
+    margin: 4rem;
+}
+
+a:hover{
+    font-size: 2.5rem;
+}
+
+.main-text{
+color: black;
+text-align: center;
+margin-top: 3rem;
+font-size: 1.25rem;
+}
+
+.main-text-green{
+    color: #129137;
+}
+
+.main-text-red{
+    color: #EB3434;
+}
+
+button{
+    border-radius: 1.75rem;
+    border:0rem;
+    margin: 1.563rem;
+    width: 8.25rem;
+    height: 2.75rem;
+    font-size: 1.25rem;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+button:hover{
+    box-shadow: 0 0.75rem 1rem 0 rgba(0,0,0,0.24), 0 1.063rem 3.125rem 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.button-green{
+    background-color: #129137;
+}
+
+.button-red{
+
+    background-color: #EB3434;
+}
+
+.pagination{
+    text-align: center;
+    font-size: 1.719rem;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+}
+
+.pagination li{
+    color: black;
+    padding: 0.5rem 1.25rem;
+    border-radius: 1.75rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.pagination li:hover{
+    color: #011936;
+}
+
+.pagination .link-active{
+    background-color: #011936;
+
+}
+
+.pagination .link-active:hover{
+    color: white;
+}
+
+.gallery {
+	width: 100%;
+	padding: 1.875rem 0.938rem;
+    	margin: auto;
+
+}
+
+.gallery .gallery-items {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 25rem;
+	flex: wrap;
+}
+
+.gallery .gallery-items .item {
+	width: 35rem;
+    border: solid #011936 0.25rem;
+	margin: 0 auto;
+	position: relative;
+	display: none; 
+}
+
+.gallery .gallery-items .item.show {
+	display: block;
+	animation: show 0.5s ease;
+}
+
+.gallery .gallery-items .item img {
+	width: 100%;
+	height: 27.5rem;
+	display: block;
+	margin: 0 auto;
+}
+
+.gallery .pagination {
+	width: 100%;
+	padding: 0.938rem;
+	text-align: center;
+}
+
+.gallery .pagination div {
+	display: inline-block;
+	margin: 0rem 0.625rem;
+}
+
+.gallery .pagination .page {
+	color: #011936;
+}
+
+.pagination .prev,
+.pagination .next {
+	color: white;
+    background-color: #011936;
+	font-size: 1.85rem;
+	cursor: pointer;
+    transition: 0.4s;
+    border-radius: 3.125rem;
+    width: 3rem;  
+    height: 3rem;  
+}
+
+.gallery .pagination .prev:hover,
+.gallery .pagination .next:hover{
+    transform: scale(1.15);
+}
+
+.gallery .pagination .prev.disabled,
+.gallery .pagination .next.disabled {
+	border: #011936 solid 0.063rem;
+    color: #011936;
+    background-color: white;
+	pointer-events: none;
+}
+
+/* pop up */
+
+u{
+    font-size: 1.563rem;
+}  
+
+.title{
+    font-size: 20.563rem;
+}
+    
+.modal, .wrong-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    z-index: 100000000000000000000000000000000000000000;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal{
+    border: 0.213rem solid #129137;
+}
+
+.wrong-modal{
+    border: 0.213rem solid #EB3434;
+}
+  
+.modal.active, .wrong-modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+  
+.modal-header, .correct-modal-header{
+    padding: 0.625rem 0.938rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.063rem solid black;
+}
+  
+.modal-header .title, .correct-modal-header .title{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+  
+.modal-body{
+    padding: 0.55rem 0.75rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.modal-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.close-button, .open-button, .understood-button{
+    cursor: pointer;
+    outline: none;    
+    font-weight: bold;
+    border-radius: 1.75rem;
+    margin: 1.563rem;
+    width: 7.25rem;
+    height: 2.75rem;
+    font-size: 1.25rem;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+.understood-button{
+    width: 17.5rem;
+}
+
+.open-button, .understood-button{
+    background-color: #129137;
+}
+
+.close-button, .wrong-open-button{
+    background-color: #EB3434;
+}
+
+.close-button:hover, .open-button:hover, .understood-button:hover{
+    box-shadow: 0 0.75rem 1rem 0 rgba(0,0,0,0.24), 0 1.063rem 3.125rem 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+  
+.modal-header, .correct-modal-header{
+    font-size: 2.5rem;
+    color: #129137;
+    text-align: center;
+    justify-content: center;
+}
+
+#wrong-modal .modal-header{
+    color: #EB3434;
+}
+
+.result-message{
+    font-size:1.5rem;
+    text-align: center;
+}
+
+.green-text{
+    color: #129137;
+}
+
+  #overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    overscroll-behavior-y: none;
+}
+  
+  #overlay.active{
+    opacity: 1;
+    pointer-events: all;    
+    overscroll-behavior-y: none;
+}
+
